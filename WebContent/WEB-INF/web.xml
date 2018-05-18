@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 万维网（网页） -->
+<!-- 命名空间    （xmlns Namespace）
+ 两个 XML 文档被一起使用，由于两个文档都包含带有不同内容和定义的 <table> 元素，会发生命名冲突。所以需要命名空间-->
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	version="4.0" metadata-complete="true">
+	<!-- servlet部署 名字 路径 -->
+	<servlet>
+		<servlet-name>main</servlet-name>
+		<servlet-class>com.csit.javaweb_my.servlets.MainServlet</servlet-class>
+	</servlet>
+	<!-- 截取请求 -->
+	<!-- 如果url－pattern定义的是路径，那么以后所有对这个路径下资源的请求都会由servlet－name中定义的servlet处理； 
+		   如果url－pattern定义的是资源格式例如*.do等，那么对于所有符合这种格式的资源的请求都由指定的servlet处理。 -->
+	<servlet-mapping>
+		<servlet-name>main</servlet-name>
+		<url-pattern>/main</url-pattern>
+	</servlet-mapping>
+
+</web-app>    
